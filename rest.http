@@ -1,0 +1,73 @@
+
+
+
+### 获取订单的商品列表
+GET http://localhost:8001/ty4g33t3
+
+###减少商品库存
+POST http://localhost:8001/decreaseNumber
+Accept: application/json
+Content-Type: application/json
+
+[{"id":1, "name":"abc", "number":23},{"id":2, "name":"def", "number":11}]
+
+### 获取用户
+GET http://localhost:8101/7
+###
+GET http://localhost:8101/8
+###
+GET http://localhost:8101/9
+###
+GET http://localhost:8101/10
+### 增加积分
+GET http://localhost:8101/8/score?score=1000
+
+### 获取订单
+GET http://localhost:8201/iujhygf435tg
+### 添加订单
+GET http://localhost:8201/add
+
+
+# ---------------------------------------------------------------------------------
+
+
+### 获取订单的商品列表
+GET http://localhost:3001/item-service/ty4g33t3
+### 获取订单的商品列表
+GET http://localhost:3001/item-service/ty4g33t3?token=u45tgf43t5
+
+### 减少商品库存
+POST http://localhost:3001/item-service/decreaseNumber
+Accept: application/json
+Content-Type: application/json
+
+[{"id":1, "name":"abc", "number":23},{"id":2, "name":"def", "number":11}]
+
+### 获取用户
+GET http://localhost:3001/user-service/7
+###
+GET http://localhost:3001/user-service/8
+###
+GET http://localhost:3001/user-service/9
+###
+GET http://localhost:3001/user-service/10
+### 增加积分
+GET http://localhost:3001/user-service/8/score?score=1000
+
+### 获取订单
+GET http://localhost:3001/order-service/iujhygf435tg
+### 添加订单
+GET http://localhost:3001/order-service/add
+
+### actuator
+http://localhost:3001/actuator
+###
+http://localhost:3001/actuator/health
+###
+http://localhost:3001/actuator/beans
+###
+http://localhost:3001/actuator/mappings
+###
+http://localhost:3001/actuator/heapdump
+###
+http://localhost:3001/actuator/hystrix.stream

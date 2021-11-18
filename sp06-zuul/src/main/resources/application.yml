@@ -1,0 +1,46 @@
+spring:
+  application:
+    name: zuul
+# eureka2001  zuul3001  4001  5001  6001
+server:
+  port: 3001
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:2001/eureka,http://eureka2:2002/eureka
+zuul:
+  routes:
+    # ** 包含深层子路径
+    # *  只包含一层路径
+    # service-id 作为访问子路径，是默认设置
+    # 根据注册表中的注册信息，zuul可以自动配置
+    # 最好自己手动配置，防止注册表不全
+    item-service: /item-service/**
+    user-service: /user-service/**
+    order-service: /order-service/**
+  retryable: true
+
+# 对所有服务都有效
+ribbon:
+  MaxAutoRetries: 1
+
+# 对 item-service 单独配置
+item-service:
+  ribbon:
+    MaxAutoRetries: 0
+
+# 暴露 actuator 监控指标
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+
+
+
+
+
+
+
+

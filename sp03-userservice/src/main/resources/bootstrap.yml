@@ -1,0 +1,14 @@
+# bootstrap.yml
+# 连接注册表，获得配置中心的地址，再从配置中心下载 user-service-dev.yml
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:2001/eureka,http://eureka2:2002/eureka
+spring:
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config-server
+      name: user-service    # 文件名
+      profile: dev          # user-service-dev.yml

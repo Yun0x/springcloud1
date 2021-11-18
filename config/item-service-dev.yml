@@ -1,0 +1,20 @@
+# yml
+# yaml
+# yet another markup language
+# 腋毛
+spring:
+  application:
+    name: item-service
+  # 防止从配置中心下载的配置，覆盖本地配置或本地命令参数
+  cloud:
+    config:
+      override-none: true
+
+# item8001 user8101 order8201
+server:
+  port: 8001
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:2001/eureka,http://eureka2:2002/eureka

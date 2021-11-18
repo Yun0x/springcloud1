@@ -1,0 +1,11 @@
+eureka:
+  instance:
+    # 主机名
+    hostname: eureka1
+  client:
+    # 集群服务器之间互相注册和拉取
+    register-with-eureka: true
+    fetch-registry: true
+    # 1 连接 2
+    service-url:
+      defaultZone: http://eureka2:2002/eureka
